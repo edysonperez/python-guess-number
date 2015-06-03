@@ -1,82 +1,109 @@
+import random
+import os
+import time
+os.system("clear")
 print   """                                                    """
-print   """                        Bienvenido a Guess Number"""
-print   """           -El juego consiste en adivinar un numero de 1 a 20"""
-print   """           -Tiene Cuatro oportunidades para adivinar el numero"""
+print   """                      Welcome to Guess Number"""
+print   """                     *************************""" 
+print   """           -The game is to guess the number from 1 to 20"""
+print   """           -You have four chances to guess the number"""
 print   """                                                    """
-print   """                                                    """
-import random 
-nuevo = True
-while nuevo == True:
-	contador = 1 
-	turno = 4
-	nuevoJuego = " "
-	generado = random.randrange(1,21)
-	while contador <= 4:   
-		print "\nGenerated:" + str(generado)
-		ingresado = raw_input("Numero de 1 a 20\n")
+time.sleep(2)
+again = True
+while again == True:
+	count = 1 
+	turn = 4
+	newGame = " "
+	generated = random.randrange(1,21)
+	while count <= 4:   
+		print "\nYou have " + str(turn) + " attempt(s)"
+		joined = raw_input("Enter a number from 1 to 20\n")
+		time.sleep(0.5)
 		try:
-			ingresado = int(ingresado)
-			print "\nGenerado:" + str(generado)
-			print "Numero:" + str(ingresado)
-			if ingresado > generado:
-				contador += 1
-				turno -= 1
-				print "El numero ingresado es MAYOR al numero generado"
-				print "Faltan " + str(turno) + " intentos"
-				if turno == 0:
+			joined = int(joined)
+			if joined > generated:
+				count += 1
+				turn -= 1
+				print "You guessed to HIHG, please try again\n"
+				time.sleep(0.5)
+				if turn == 0:
 					print "GAME OVER"
-					nuevo2 = True
-					while nuevo2 == True:
-						nuevoJuego = raw_input("Desea jugar de nuevo y/n\n")
-						minu = nuevoJuego.lower()
-						if minu == "y":
-							nuevo = True
-							nuevo2 = False
-						elif minu == "n": 
-							nuevo2 = False
-							nuevo = False
-							print "GRACIAS POR JUGAR THE GUESS NUMBER"
+					reagain = True
+					while reagain == True:
+						newGame = raw_input("Want to play again? y/n\n")
+						minuscule = newGame.lower()
+						if minuscule == "y":
+							again = True
+							reagain = False
+							
+							os.system("clear")
+							print   """                                                    """
+							print   """                      Welcome to Guess Number"""
+							print   """                     *************************"""
+							print   """           -The game is to guess the number from 1 to 20"""
+							print   """           -You have four chances to guess the number"""
+							print   """                                                    """
+						elif minuscule == "n": 
+							reagain = False
+							again = False
+							print "\nThanks for playing GUESS NUMBER!\n"
 						else: 
-							nuevo2 = True
-			elif ingresado < generado:
-				contador += 1
-				turno -= 1 
-				print "El numero ingresado es MENOR al numero generado "
-				print "Faltan " + str(turno) + " intentos"
-				if turno ==0:
+							reagain = True
+			elif joined < generated:
+				count += 1
+				turn -= 1 
+				print "you guessed to LOW, please try again\n"
+				time.sleep(0.5)
+				if turn == 0:
 					print "GAME OVER"
-					nuevo2 = True
-					while nuevo2 == True:
-						nuevoJuego = raw_input("Desea jugar de nuevo y/n\n")
-						minu = nuevoJuego.lower()
-						if minu == "y":
-							nuevo = True
-							nuevo2 = False
-						elif minu == "n": 
-							nuevo2 = False
-							nuevo = False
-							print "GRACIAS POR JUGAR THE GUESS NUMBER"
+					reagain = True
+					while reagain == True:
+						newGame = raw_input("Want to play again? y/n\n")
+						minuscule = newGame.lower()
+						if minuscule == "y":
+							again = True
+							reagain = False
+							
+							os.system("clear")
+							print   """                                                    """
+							print   """                      Welcome to Guess Number"""
+							print   """                     *************************"""
+							print   """           -The game is to guess the number from 1 to 20"""
+							print   """           -You have four chances to guess the number"""
+							print   """                                                    """
+						elif minuscule == "n": 
+							reagain = False
+							again = False
+							print "\nThanks for playing GUESS NUMBER!\n"
 						else: 
-							nuevo2 = True				
+							reagain = True				
 			else:
 				print "YOU WIN"
-				nuevo = False
-				nuevo2 = True
-				while nuevo2 == True:
-					nuevoJuego = raw_input("Desea jugar de nuevo y/n\n")
-					minu = nuevoJuego.lower()
-					if minu == "y":
-						nuevo = True
-						nuevo2 = False
-					elif minu == "n": 
-						nuevo2 = False
-						nuevo = False
-						print "GRACIAS POR JUGAR THE GUESS NUMBER"
+				again = False
+				reagain = True
+				while reagain == True:
+					newGame = raw_input("Want to play again? y/n\n")
+					minuscule = newGame.lower()
+					if minuscule == "y":
+						again = True
+						reagain = False
+						
+						os.system("clear")
+						print   """                                                    """
+						print   """                      Welcome to Guess Number"""
+						print   """                     *************************"""
+						print   """           -The game is to guess the number from 1 to 20"""
+						print   """           -You have four chances to guess the number"""
+						print   """                                                    """
+					elif minuscule == "n": 
+						reagain = False
+						again = False
+						print "\nThanks for playing GUESS NUMBER!\n"
 					else: 
-							nuevo2 = True
-				break
+							reagain = True
+				break			
 		except:
-			print "Lo siento no es un numero, intente de nuevo! Numeros de 1 a 20"	
+			print "Try again! Only numbers from 1 to 20"	
 
 
 
