@@ -78,6 +78,10 @@ while AGAIN == True: #Start the while loop in True, Start all program
                                     print   """     -The game is to guess the number from 1 to 20"""
                                     print   """     -You have four chances to guess the number"""
                                     print   """                                              """
+                                    COUNT = 1
+                                    TURN = 4
+                                    NEWGAME = " "
+                                    GENERATED = random.randrange(1, 21)
                                 elif MINUSCULE == "n": #Comparate is same "n"
                                     REAGAIN = False #The while loop(regaom) stop
                                     AGAIN = False #The while loop(AGAIN) stop
@@ -101,6 +105,10 @@ while AGAIN == True: #Start the while loop in True, Start all program
                                 print   """     -The game is to guess the number from 1 to 20"""
                                 print   """     -You have four chances to guess the number"""
                                 print   """                                                    """
+                                COUNT = 1
+                                TURN = 4
+                                NEWGAME = " "
+                                GENERATED = random.randrange(1, 21)
                             elif MINUSCULE == "n": #Comparate MINUSCULE is same "n"
                                 REAGAIN = False #The while loop(regain) stop
                                 AGAIN = False #The while loop(AGAIN) stop
