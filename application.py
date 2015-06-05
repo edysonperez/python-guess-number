@@ -17,7 +17,6 @@ while AGAIN == True: #Start the while loop in True, Start all program
     NEWGAME = " " #Creating variable(NEWGAME) as string
     GENERATED = random.randrange(1, 21) #Creating a random number from 1 to 20
     while COUNT <= 4: #Starts the while loop and runs while(COUNT) is less than five
-        print GENERATED
         print "\nYou have " + str(TURN) + " attempt(s)" #Print the message as many as attemps have
         try:
             CORRECT = True
